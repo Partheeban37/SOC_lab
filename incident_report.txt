@@ -1,0 +1,35 @@
+Incident ID: SOC-INC-001
+Incident Type: Multiple Failed SSH Login Attempts
+Date & Time: 22-Jan-2026
+Detected By: Splunk SIEM Alert
+Alert Name: SSH Failed Login Alert
+
+Description:
+Multiple failed SSH login attempts were detected within a short time window
+from Linux authentication logs.
+
+Affected System:
+Hostname: localhost
+Log Source: /var/log/secure
+
+Indicators Observed:
+- Repeated "Failed password" entries
+- Multiple authentication failures within 15 minutes
+
+Severity:
+Medium
+
+Initial Analysis (SOC L1):
+The activity indicates a potential brute-force login attempt.
+No successful login was observed during the alert window.
+
+Action Taken:
+Reviewed SIEM alert and authentication logs.
+Monitored system for further suspicious activity.
+
+Escalation:
+Not escalated to SOC L2 at this stage.
+Will escalate if activity continues or successful login is detected.
+
+Status:
+Closed
